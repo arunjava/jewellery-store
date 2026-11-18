@@ -1,0 +1,95 @@
+<section class="hero">
+  <div class="hero-image" role="img" aria-label="Gold jewellery styled with soft natural light"></div>
+  <div class="hero-content">
+    <p class="eyebrow">MADE FOR YOUR EVERY DAY</p>
+    <h1>Little things.<br><em>Lasting feeling.</em></h1>
+    <p class="hero-copy">Jewellery to make the ordinary feel a little more like you.</p>
+    <a mat-flat-button class="hero-cta" routerLink="/" fragment="shop">Explore the collection <mat-icon>arrow_downward</mat-icon></a>
+    <div class="hero-note"><span>01</span><span>Thoughtful by nature</span></div>
+  </div>
+  <div class="hero-caption">A softer kind of statement</div>
+</section>
+
+<section class="collection" id="shop">
+  <div class="collection-heading">
+    <div>
+      <p class="eyebrow">THE AURELIA EDIT</p>
+      <h2>Find your forever <em>piece.</em></h2>
+    </div>
+    <p class="collection-intro">Considered shapes, beautiful materials, and small details you'll notice every time.</p>
+  </div>
+
+  <div class="collection-toolbar">
+    <div class="category-filters" aria-label="Filter by category">
+      @for (category of categories; track category) {
+        <button class="category-chip" [class.active]="selectedCategory === category" (click)="selectCategory(category)">
+          {{ category }}
+        </button>
+      }
+    </div>
+    <label class="sort-control">Sort by
+      <select aria-label="Sort products" [value]="sortBy" (change)="sortBy = $any($event.target).value">
+        <option value="featured">Featured</option>
+        <option value="newest">Newest</option>
+        <option value="price-low">Price: low to high</option>
+        <option value="price-high">Price: high to low</option>
+      </select>
+    </label>
+  </div>
+
+  @if (query) {
+    <p class="search-summary">Showing results for <strong>“{{ query }}”</strong></p>
+  }
+
+  @if (loading) {
+    <div class="loading-state"><mat-spinner diameter="38"></mat-spinner><p>Finding your favourites…</p></div>
+  } @else if (loadError) {
+    <div class="empty-state">
+      <mat-icon>cloud_off</mat-icon>
+      <h3>We couldn't reach the collection.</h3>
+      <p>Make sure the Spring Boot API is running, then refresh the page.</p>
+    </div>
+  } @else if (!filteredProducts.length) {
+    <div class="empty-state">
+      <mat-icon>search_off</mat-icon>
+      <h3>No pieces found just yet.</h3>
+      <p>Try a different search or explore all of our jewellery.</p>
+      <button mat-button (click)="query = ''; selectCategory('All pieces')">See all pieces</button>
+    </div>
+  } @else {
+    <div class="product-grid">
+      @for (product of filteredProducts; track product.id) {
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <a [routerLink]="['/product', product.id]" class="product-image-link" [attr.aria-label]="'View ' + product.name">
+              <img [src]="product.imageUrl" [alt]="product.name" loading="lazy">
+            </a>
+            @if (product.featured) { <span class="product-tag">A FAVOURITE</span> }
+            <button mat-icon-button class="quick-add" [attr.aria-label]="'Add ' + product.name + ' to bag'" (click)="addToBag(product)">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+          <div class="product-meta">
+            <div>
+              <a [routerLink]="['/product', product.id]" class="product-name">{{ product.name }}</a>
+              <span class="product-category">{{ product.category }}</span>
+            </div>
+            <span class="product-price">{{ product.price | currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>
+
+<section class="promise">
+  <div class="promise-ornament"><span>✳</span></div>
+  <p class="eyebrow">MADE WITH MEANING</p>
+  <h2>Good things, <em>kept close.</em></h2>
+  <p>We choose enduring materials and thoughtful details, creating pieces that become a part of your everyday story.</p>
+  <div class="promise-points">
+    <span><mat-icon>eco</mat-icon> Recycled metals</span>
+    <span><mat-icon>favorite_border</mat-icon> Made to be worn</span>
+    <span><mat-icon>redeem</mat-icon> Gift-ready, always</span>
+  </div>
+</section>

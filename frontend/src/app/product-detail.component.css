@@ -1,0 +1,247 @@
+.detail-page {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 600px;
+  padding: 24px 28px 90px;
+}
+
+.back-link {
+  color: #687368;
+  font-size: 11px;
+  margin: 0 0 24px -8px;
+}
+
+.back-link mat-icon {
+  font-size: 17px;
+  height: 17px;
+  margin-right: 4px;
+  width: 17px;
+}
+
+.product-detail {
+  align-items: center;
+  display: grid;
+  gap: clamp(40px, 9vw, 120px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.8fr);
+  padding: 7px 3.5%;
+}
+
+.detail-image {
+  background: #f0eee7;
+  position: relative;
+}
+
+.detail-image img {
+  aspect-ratio: 0.91;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.product-tag {
+  background: rgba(251, 250, 246, 0.92);
+  color: #756345;
+  font-size: 8px;
+  left: 15px;
+  letter-spacing: 0.12em;
+  padding: 8px 10px;
+  position: absolute;
+  top: 15px;
+}
+
+.detail-copy {
+  padding: 22px 0;
+}
+
+.eyebrow {
+  color: #927950;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.detail-copy h1 {
+  color: #334239;
+  font: 500 clamp(31px, 3.4vw, 44px)/1.2 "Playfair Display", Georgia, serif;
+  letter-spacing: -0.025em;
+  margin: 16px 0 10px;
+}
+
+.detail-price {
+  color: #526055;
+  font-size: 15px;
+  margin: 0;
+}
+
+.detail-rule {
+  background: #e7e2d7;
+  height: 1px;
+  margin: 26px 0 22px;
+}
+
+.description {
+  color: #737a70;
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 430px;
+}
+
+.material-note {
+  align-items: center;
+  background: #f3f1ea;
+  color: #9b8052;
+  display: flex;
+  gap: 13px;
+  margin: 26px 0;
+  padding: 15px 16px;
+}
+
+.material-note mat-icon {
+  font-size: 19px;
+  height: 19px;
+  width: 19px;
+}
+
+.material-note div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.material-note span {
+  color: #8f917f;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.material-note strong {
+  color: #475349;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.stock-note {
+  align-items: center;
+  color: #788073;
+  display: flex;
+  font-size: 10px;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.stock-note span {
+  background: #8c9a7f;
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+}
+
+.add-button {
+  background: #334239 !important;
+  border-radius: 3px !important;
+  color: #fff !important;
+  height: 51px;
+  justify-content: space-between;
+  padding: 0 19px;
+  width: 100%;
+}
+
+.add-button span {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.detail-perks {
+  border-top: 1px solid #e7e2d7;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.detail-perks p {
+  align-items: center;
+  color: #747d72;
+  display: flex;
+  font-size: 10px;
+  gap: 9px;
+  margin: 12px 0;
+}
+
+.detail-perks mat-icon {
+  color: #a17d49;
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+}
+
+.loading-state,
+.not-found {
+  align-items: center;
+  color: #727b70;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 430px;
+  text-align: center;
+}
+
+.not-found > mat-icon {
+  color: #9b8052;
+  font-size: 32px;
+  height: 32px;
+  width: 32px;
+}
+
+.not-found h1 {
+  color: #334239;
+  font: 500 27px "Playfair Display", Georgia, serif;
+  margin: 15px 0 3px;
+}
+
+.not-found p,
+.loading-state p {
+  font-size: 12px;
+}
+
+.not-found a {
+  background: #334239;
+  color: #fff;
+  margin-top: 14px;
+}
+
+@media (max-width: 720px) {
+  .detail-page {
+    min-height: 0;
+    padding: 20px 18px 60px;
+  }
+
+  .back-link {
+    margin-bottom: 15px;
+  }
+
+  .product-detail {
+    gap: 22px;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .detail-image img {
+    aspect-ratio: 1.03;
+  }
+
+  .detail-copy {
+    padding: 10px 1px 0;
+  }
+
+  .detail-copy h1 {
+    font-size: 34px;
+    margin: 12px 0 8px;
+  }
+
+  .detail-rule {
+    margin: 19px 0;
+  }
+
+  .material-note {
+    margin: 20px 0;
+  }
+}

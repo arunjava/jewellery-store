@@ -1,0 +1,412 @@
+:host {
+  display: block;
+}
+
+.announcement {
+  align-items: center;
+  background: #334239;
+  color: #fffaf0;
+  display: flex;
+  font-size: 11px;
+  justify-content: center;
+  letter-spacing: 0.07em;
+  min-height: 34px;
+  padding: 0 24px;
+  position: relative;
+}
+
+.announcement-note {
+  color: #d7c7a6;
+  position: absolute;
+  right: max(24px, calc((100vw - 1200px) / 2));
+}
+
+.site-header {
+  align-items: center;
+  background: #fbfaf6;
+  border-bottom: 1px solid #e8e4da;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr minmax(240px, 430px) 1fr;
+  min-height: 86px;
+  padding: 0 max(28px, calc((100vw - 1200px) / 2));
+}
+
+.wordmark {
+  align-items: center;
+  color: #334239;
+  display: inline-flex;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 10px;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.wordmark small {
+  display: block;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  margin-top: 3px;
+}
+
+.wordmark-mark {
+  align-items: center;
+  border: 1px solid #bd9b60;
+  border-radius: 50%;
+  color: #bd9b60;
+  display: inline-flex;
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  height: 43px;
+  justify-content: center;
+  letter-spacing: 0;
+  width: 43px;
+}
+
+.header-search {
+  align-items: center;
+  background: #f2f0e9;
+  border-radius: 30px;
+  color: #667166;
+  display: flex;
+  height: 44px;
+  padding: 0 8px 0 16px;
+}
+
+.header-search mat-icon {
+  font-size: 19px;
+  height: 19px;
+  width: 19px;
+}
+
+.header-search input {
+  background: transparent;
+  border: 0;
+  color: #334239;
+  flex: 1;
+  font: inherit;
+  font-size: 12px;
+  min-width: 0;
+  outline: none;
+  padding: 0 12px;
+}
+
+.header-search input::placeholder {
+  color: #898d82;
+}
+
+.header-search button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #334239;
+  cursor: pointer;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
+.header-search button mat-icon {
+  font-size: 17px;
+  height: 17px;
+  width: 17px;
+}
+
+.header-actions {
+  align-items: center;
+  display: flex;
+  gap: 26px;
+  justify-content: flex-end;
+}
+
+.desktop-link {
+  color: #445148;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.desktop-link:hover {
+  color: #a37c3f;
+}
+
+.cart-button {
+  color: #334239;
+}
+
+.site-footer {
+  align-items: center;
+  background: #334239;
+  color: #e6e1d5;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  min-height: 112px;
+  padding: 20px max(28px, calc((100vw - 1200px) / 2));
+}
+
+.footer-wordmark {
+  color: #f5f0e4;
+}
+
+.footer-wordmark .wordmark-mark {
+  color: #d7bd8c;
+}
+
+.site-footer p,
+.footer-copy {
+  font-size: 11px;
+}
+
+.site-footer p {
+  color: #d7c7a6;
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+}
+
+.drawer-scrim {
+  background: rgba(25, 30, 26, 0.38);
+  border: 0;
+  inset: 0;
+  position: fixed;
+  z-index: 20;
+}
+
+.cart-drawer {
+  background: #fbfaf6;
+  bottom: 0;
+  box-shadow: -12px 0 50px rgba(32, 38, 33, 0.13);
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  padding: 28px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 440px;
+  z-index: 21;
+}
+
+.drawer-heading {
+  align-items: center;
+  border-bottom: 1px solid #e8e4da;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.drawer-heading .eyebrow {
+  margin-bottom: 7px;
+}
+
+.drawer-heading h2 {
+  font: 500 26px "Playfair Display", serif;
+  margin: 0;
+}
+
+.drawer-heading h2 span {
+  color: #8c9288;
+  font: 400 14px "DM Sans", sans-serif;
+}
+
+.cart-lines {
+  flex: 1;
+  overflow: auto;
+}
+
+.cart-line {
+  align-items: flex-start;
+  border-bottom: 1px solid #e8e4da;
+  display: flex;
+  gap: 14px;
+  padding: 20px 0;
+}
+
+.cart-line > img {
+  aspect-ratio: 1;
+  background: #f0eee7;
+  border-radius: 6px;
+  object-fit: cover;
+  width: 76px;
+}
+
+.cart-line-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cart-line-info > a {
+  color: #334239;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cart-line-info > span {
+  color: #898d82;
+  font-size: 11px;
+}
+
+.cart-line > strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.quantity-control {
+  align-items: center;
+  display: flex;
+  gap: 2px;
+  margin-left: -10px;
+  margin-top: 4px;
+}
+
+.quantity-control span {
+  font-size: 12px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.quantity-control button {
+  height: 30px;
+  width: 30px;
+}
+
+.quantity-control mat-icon {
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+}
+
+.cart-summary {
+  border-top: 1px solid #e8e4da;
+  padding-top: 18px;
+}
+
+.cart-summary > div {
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+}
+
+.cart-summary > p {
+  color: #898d82;
+  font-size: 11px;
+  margin: 8px 0 16px;
+}
+
+.checkout-button,
+.continue-button {
+  min-height: 45px;
+  width: 100%;
+}
+
+.continue-button {
+  margin-top: 6px;
+}
+
+.empty-cart {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 12px;
+  text-align: center;
+}
+
+.empty-bag-icon {
+  align-items: center;
+  background: #f1eee5;
+  border-radius: 50%;
+  color: #758174;
+  display: flex;
+  height: 58px;
+  justify-content: center;
+  width: 58px;
+}
+
+.empty-cart h3 {
+  font: 500 22px "Playfair Display", serif;
+  margin: 20px 0 6px;
+}
+
+.empty-cart p {
+  color: #7d8278;
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+
+@media (max-width: 700px) {
+  .announcement {
+    font-size: 10px;
+    min-height: 31px;
+    padding: 0 10px;
+  }
+
+  .announcement-note,
+  .desktop-link {
+    display: none;
+  }
+
+  .site-header {
+    gap: 12px;
+    grid-template-columns: 1fr auto;
+    min-height: 72px;
+    padding: 0 18px;
+  }
+
+  .wordmark {
+    font-size: 12px;
+    gap: 7px;
+    letter-spacing: 0.13em;
+  }
+
+  .wordmark small {
+    font-size: 7px;
+  }
+
+  .wordmark-mark {
+    font-size: 20px;
+    height: 38px;
+    width: 38px;
+  }
+
+  .header-search {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 40px;
+    margin-bottom: 13px;
+    order: 3;
+  }
+
+  .site-header {
+    padding-bottom: 1px;
+  }
+
+  .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 26px 22px;
+  }
+
+  .site-footer p {
+    margin: 2px 0;
+  }
+
+  .cart-drawer {
+    padding: 22px;
+    width: min(440px, 100vw);
+  }
+}

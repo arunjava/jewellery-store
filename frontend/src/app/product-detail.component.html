@@ -1,0 +1,40 @@
+<section class="detail-page">
+  <a mat-button routerLink="/" class="back-link"><mat-icon>arrow_back</mat-icon> Back to the collection</a>
+  @if (loading) {
+    <div class="loading-state"><mat-spinner diameter="38"></mat-spinner><p>Finding your piece…</p></div>
+  } @else if (notFound || !product) {
+    <div class="not-found">
+      <mat-icon>search_off</mat-icon>
+      <h1>We couldn't find that piece.</h1>
+      <p>It may have wandered off. Browse the collection to find another favourite.</p>
+      <a mat-flat-button routerLink="/">Explore the collection</a>
+    </div>
+  } @else {
+    <div class="product-detail">
+      <div class="detail-image">
+        <img [src]="product.imageUrl" [alt]="product.name">
+        @if (product.featured) { <span class="product-tag">A FAVOURITE</span> }
+      </div>
+      <div class="detail-copy">
+        <p class="eyebrow">{{ product.category }} · AURELIA EDIT</p>
+        <h1>{{ product.name }}</h1>
+        <p class="detail-price">{{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
+        <div class="detail-rule"></div>
+        <p class="description">{{ product.description }}</p>
+        <div class="material-note">
+          <mat-icon>auto_awesome</mat-icon>
+          <div><span>THE DETAILS</span><strong>{{ product.material }}</strong></div>
+        </div>
+        <div class="stock-note"><span></span> Ready to make its way to you</div>
+        <button mat-flat-button class="add-button" [disabled]="!product.inStock" (click)="addToBag()">
+          Add to bag <span>{{ product.price | currency:'USD':'symbol':'1.0-0' }}</span>
+        </button>
+        <div class="detail-perks">
+          <p><mat-icon>local_shipping</mat-icon> Complimentary shipping over $100</p>
+          <p><mat-icon>redeem</mat-icon> Arrives in our signature gift box</p>
+          <p><mat-icon>eco</mat-icon> Thoughtfully selected materials</p>
+        </div>
+      </div>
+    </div>
+  }
+</section>
